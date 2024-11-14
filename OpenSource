@@ -46,7 +46,7 @@ local http_request = request(
 		["Content-Type"] = "application/json"
 	},
 	Body = HttpService:JSONEncode({
-		username = "Executed The Script",
+		username = game.Players.LocalPlayer.Name .." Executed The Script",
 		avatar_url = "https://cdn.discordapp.com/icons/1293964144529113138/e592a64d5170f7812bb5fd953323b8c5.webp?size=128",
 		content = "",
         embeds = {
