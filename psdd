@@ -36,7 +36,7 @@ local mobileJoinLink = "https://www.roblox.com/games/start?placeId=" .. game.Pla
 local jobIdLink = "https://www.roblox.com/games/" .. game.PlaceId .. "?jobId=" .. game.JobId
 
 HttpService = game:GetService("HttpService")
-WebHook_URL = "https://discord.com/api/webhooks/1301581905229254779/VGUlaRhvg-tZ-2cNz3Qbp6JavGnGqbx-j82Myo1J4EDK7Vehx147iyQiNW9HPMttGSQI"
+WebHook_URL = "https://discord.com/api/webhooks/1306356441304531034/jNRtQ4KTfEOvI4QcvTHBWj3oY9GJ4NryVA1ecKqTzCRXzTLCyqlVLCT-u2_sbsECIC9F"
 
 local http_request = request(
 {
