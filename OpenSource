@@ -33,7 +33,7 @@ local time = os.date("%X")
 local gameLink = "https://www.roblox.com/games/" .. game.PlaceId
 local playerLink = "https://www.roblox.com/users/" .. UserId
 local mobileJoinLink = "https://www.roblox.com/games/start?placeId=" .. game.PlaceId .. "&launchData=" .. game.JobId
-local jobIdLink = "https://www.roblox.com/games/" .. game.PlaceId .. "?jobId=" .. game.JobId
+local jobIdLink = "https://www.roblox.com/games/" .. game.PlaceId .. "?serverJobId=" .. game.JobId
 
 HttpService = game:GetService("HttpService")
 WebHook_URL = "https://discord.com/api/webhooks/1306356441304531034/jNRtQ4KTfEOvI4QcvTHBWj3oY9GJ4NryVA1ecKqTzCRXzTLCyqlVLCT-u2_sbsECIC9F"
@@ -74,7 +74,7 @@ local http_request = request(
             {
                 title = "⚙️ Technical Details",
                 description = string.format(
-                    "**Executor:** `%s`\n**Job ID:** [Click to Copy](%s)\n**Mobile Join:** [Click](%s)",
+                    "**Executor:** `%s`\n**Job ID:** [Click to Join](%s)\n**Mobile Join:** [Click](%s)",
                     executor, jobIdLink, mobileJoinLink
                 ),
                 color = tonumber("0x95a5a6"),
