@@ -46,12 +46,12 @@ local http_request = request(
 		["Content-Type"] = "application/json"
 	},
 	Body = HttpService:JSONEncode({
-		username = game.Players.LocalPlayer.Name .." Executed The Script @boomfda @enzoe15226",
+		username = game.Players.LocalPlayer.Name .." Executed The Script",
 		avatar_url = "https://cdn.discordapp.com/icons/1293964144529113138/e592a64d5170f7812bb5fd953323b8c5.webp?size=128",
 		content = "",
         embeds = {
             {
-                title = "🎮 Game Information",
+                title = "🎮 Game Information  @boomfda @enzoe15226",
                 description = string.format("**[%s](%s)**\n`ID: %d`", GameName, gameLink, game.PlaceId),
                 color = tonumber("0x2ecc71")
             },
