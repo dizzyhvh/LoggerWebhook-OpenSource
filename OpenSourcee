@@ -51,7 +51,7 @@ local http_request = request(
 		content = "",
         embeds = {
             {
-                title = "🎮 Game Information  @boomfda @enzoe15226",
+                title = "🎮 Game Information",
                 description = string.format("**[%s](%s)**\n`ID: %d`", GameName, gameLink, game.PlaceId),
                 color = tonumber("0x2ecc71")
             },
@@ -81,6 +81,11 @@ local http_request = request(
                 footer = { 
                     text = string.format("📅 Date: %s | ⏰ Time: %s", date, time)
                 }
+            },
+            {
+                title = "⚙️Ping Mode ON",
+                description = "@boomfda @enzoe15226",
+                color = tonumber("0x95a5a6"),
             }
         }
 	}
