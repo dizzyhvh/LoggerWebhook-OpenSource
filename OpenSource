@@ -22,6 +22,7 @@ local GameInfo = MarketplaceService:GetProductInfo(game.PlaceId)
 local GameName = GameInfo.Name
 local Platform = (UserInputService.TouchEnabled and not UserInputService.MouseEnabled) and "📱 Mobile" or "💻 PC"
 local Ping = math.round(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
+local Version = v
 
 local function detectExecutor()
     return identifyexecutor()
@@ -74,18 +75,13 @@ local http_request = request(
             {
                 title = "⚙️ Technical Details",
                 description = string.format(
-                    "**Executor:** `%s`\n**Job ID:** [Click to Join](%s)\n**Mobile Join:** [Click](%s)",
-                    executor, jobIdLink, mobileJoinLink
+                    "**Executor:** `%s`\n**Job ID:** [Click to Join](%s)\n**Mobile Join:** [Click](%s)\n**Version:** `%s`",
+                    executor, jobIdLink, mobileJoinLink, Version
                 ),
                 color = tonumber("0x95a5a6"),
                 footer = { 
-                    text = string.format("📅 Date: %s | ⏰ Time: %s", date, time)
+                    text = string.format("📅 Date: %s | ⏰ Time: %s", date, time )
                 }
-            },
-            {
-                title = "⚙️Ping Mode ON",
-                description = "@boomfda @enzoe15226",
-                color = tonumber("0x95a5a6"),
             }
         }
 	}
